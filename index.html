@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Web</title>
+    <link rel="shortcut icon" href="/images/fav-icon.png" type="image/x-icon">
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/node_modules/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="/node_modules/remixicon/fonts/remixicon.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <!-- <link rel="stylesheet" href="/images/icomoon.svg"> -->
+    
+    <!-- main style -->
+</head>
+<body>
+    <!-- loader start -->
+    <div class="preloader">
+        <lord-icon
+        src="https://cdn.lordicon.com/drtyjchi.json"
+        trigger="loop"
+        delay="200"
+        colors="primary:#16a9c7,secondary:#16a9c7"
+        style="width:200px;height:200px">
+        </lord-icon>
+    </div>
+    <!-- loader end -->
+
+    <!-- navbar start -->
+    <nav class="navbar px-lg-5 py-lg-4 navbar-expand-xl">
+      <div class="container-fluid position-relative">
+        <a class="navbar-brand" href="#">
+          <img src="/images/shield.png" alt="">
+          <span>MedicWeb</span>
+        </a>
+        <div class="navbar-nav d-none d-xl-flex ms-xl-5">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Find Doctor</a>
+          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="#">Faq</a>
+          <a class="nav-link" href="#">Contact</a>
+        </div>
+        <div class="d-flex ms-auto">
+          <button class="btn search-toggler fs-4 me-1" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample2" aria-controls="offcanvasExample2">
+            <i class="ri-search-2-line"></i>
+          </button>
+          <button class="btn fs-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+            <i class="ri-menu-3-line"></i>
+          </button>
+        </div>
+      </div>
+    </nav>
+      <!-- offcanvas body -->
+    <div class="offcanvas offcanvas-end" data-bs-scroll="true" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">MedicWeb</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="navbar-nav d-block d-xl-none ms-4">
+          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">About</a>
+          <a class="nav-link" href="#">Find Doctor</a>
+          <a class="nav-link" href="#">Blog</a>
+          <a class="nav-link" href="#">Faq</a>
+          <a class="nav-link" href="#">Contact</a>
+        </div>
+        <div class="d-none d-xl-block pt-3 pt-xl-4">
+          <div class="d-flex align-items-center">
+            <div class="element-rounded element-md border border-primary text-primary">
+              <i class="ri-nurse-fill"></i>
+            </div>
+            <a class="text-secondary fw-medium ms-3 fs-5">Doctors List</a>
+          </div>
+          <div class="d-flex mt-3 align-items-center">
+            <div class="element-rounded element-md border border-primary text-primary">
+              <i class="ri-heart-add-line"></i>
+            </div>
+            <a class="text-secondary fw-medium ms-3 fs-5">Add Appointment</a>
+          </div>
+          <div class="mt-4">
+            <div class="w-100 px-5 py-3 bg-primary-light-2 rounded-3">
+              <h4 class="text-secondary">Contact</h4>
+              <span class="text-primary">+880 1235 456789</span>
+            </div>
+          </div>
+          <div class="mt-4">
+            <div class="w-100 px-5 py-3 bg-primary-light-2 rounded-3">
+              <h4 class="text-secondary">Email Us</h4>
+              <span class="text-primary">md.salmanezaz@gmail.com</span>
+            </div>
+          </div>
+          <h4 class="text-secondary my-4 text-center text-sm-start">Subscribe To Us Now!</h4>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control border-primary bg-transparent shadow-none" placeholder="email">
+              <a href="#" class="input-group-text border-primary bg-primary-gradient text-white">Submit</a>
+            </div>
+        </div>
+      </div>
+    </div>
+    <div class="offcanvas offcanvas-top" style="height: 9rem;" data-bs-scroll="true" tabindex="-1" id="offcanvasExample2" aria-labelledby="offcanvasExampleLabel">
+      <div class="offcanvas-header pe-4 pt-4">
+        <button type="button" class="ms-auto btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <div class="search-panel d-flex align-items-center">
+          <div class="input-group pe-2">
+            <input type="text" class="form-control shadow-none" placeholder="Input here..." autocomplete="false" name="hidden">
+            <a href="#" class="input-group-text">
+              <i class="ri-search-line"></i>
+            </a>
+          </div>
+          <button class="btn text-secondary py-1 px-2">
+            <i class="ri-equalizer-line"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- banner start -->
+    <div id="banner">
+      <div class="container">
+        <div class="d-flex flex-column flex-lg-row vh-100 align-items-lg-center justify-content-between justify-content-lg-start">
+        <div class="banner-title">
+          <h1>Your Partner in <br> Health and Wellness</h1>
+          <p>We are committed to providing you with the best medical and healthcare services to help you live healthier and happier.</p>
+          <a class="mt-4 mb-4 mb-lg-0 d-flex text-secondary align-items-center justify-content-lg-start justify-content-center">
+            <i class="ri-play-circle-line fs-1 me-3"></i>
+            <span class="fw-medium fs-5">See Our Promo</span>
+          </a>
+        </div>
+        <div class="banner-doc position-lg-absolute w-lg-45 w-md-50 mx-auto">
+          <img src="/images/docs.png" alt="">
+        </div>
+        </div>
+      </div>
+    </div>
+    <!-- banner end -->
+    <!-- booking start -->
+    <div id="booking">
+      <div class="container">
+        <div class="card my-4 shadow border-0">
+          <div class="card-body p-5">
+            <div class="row">
+              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 pb-3 pb-lg-0 mb-3 mb-xl-0 pb-2 pb-xl-0 d-flex align-items-center">
+                <div>
+                  <div class="element-rounded bg-primary me-3">
+                    <i class="ri-phone-fill text-white"></i>
+                  </div>
+                </div>
+                <div>
+                  <h6 class="text-secondary mb-1">Hotline</h6>
+                  <p class="text-gray mb-0">+880 1234 567 567</p>
+                  <p class="text-gray mb-0">+880 1234 567 567</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 mb-3 mb-xl-0 pb-2 pb-xl-0 d-flex align-items-center">
+                <div>
+                  <div class="element-rounded bg-primary me-3">
+                    <i class="ri-stethoscope-fill text-white"></i>
+                  </div>
+                </div>
+                <div>
+                  <h6 class="text-secondary mb-1">Ambulance</h6>
+                  <p class="text-gray mb-0">+880 1919 111 222</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 mb-3 mb-xl-0 pb-2 pb-xl-0 d-flex align-items-center">
+                <div>
+                  <div class="element-rounded bg-primary me-3">
+                    <i class="ri-map-pin-fill text-white"></i>
+                  </div>
+                </div>
+                <div>
+                  <h6 class="text-secondary mb-1">Location</h6>
+                  <p class="text-gray mb-0">Mohammadpur, Dhaka</p>
+                </div>
+              </div>
+              <div class="col-xl-3 col-lg-12 col-md-6 pt-2 pt-xl-0 d-flex align-items-center">
+                <button class="booking-btn btn rounded-pill px-5 py-4 fs-5 text-white">
+                  <span>Book Now</span>
+                  <span><i class="ri-arrow-right-line"></i></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- booking end -->
+    <!-- values start -->
+    <section id="values">
+      <h2 class="common-title text-secondary text-center fs-1">Our Values</h2>
+      <div class="container pb-3">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 pb-3 pb-lg-0">
+            <div class="card value-card">
+              <div class="card-header d-flex align-items-center justify-content-center">
+                <div class="element-rounded element-md text-white bg-primary">
+                  <i class="ri-lightbulb-flash-line"></i>
+                </div>
+                <h5 class="mb-0 ms-3">Excellence</h5>
+              </div>
+              <div class="card-body text-center px-lg-4 px-4 px-sm-5">
+                <p>We are committed to providing excellent medical care and services to our patients. We believe in continuously improving our skills, knowledge, and resources to ensure that we deliver the highest quality care possible.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row p-lg-5">
+          <div class="col-lg-4 pb-3 pb-lg-0">
+            <div class="card value-card">
+              <div class="card-header d-flex align-items-center justify-content-center">
+                <div class="element-rounded element-md text-white bg-primary">
+                  <i class="ri-hand-heart-line"></i>
+                </div>
+                <h5 class="mb-0 ms-3">Compassion</h5>
+              </div>
+              <div class="card-body text-center px-lg-4 px-4 px-sm-5">
+                <p>We understand that seeking medical care can be a stressful and emotional experience, and we strive to create a welcoming and supportive environment that puts our patients at ease and every one.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 text-center d-none d-lg-flex align-items-center justify-content-center">
+            <div class="value-img">
+              <img src="/images/shield.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-4 pb-3 pb-lg-0">
+            <div class="card value-card">
+              <div class="card-header d-flex align-items-center justify-content-center">
+                <div class="element-rounded element-md text-white bg-primary">
+                  <i class="ri-merge-cells-horizontal"></i>
+                </div>
+                <h5 class="mb-0 ms-3">Integrity</h5>
+              </div>
+              <div class="card-body text-center px-lg-4 px-4 px-sm-5">
+                <p>We believe in practicing medicine with integrity and honesty. We are transparent in our communication and decision-making processes, and we always put our patient's interests first & provide best solution.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row justify-content-evenly">
+          <div class="col-lg-4 pb-3 pb-lg-0">
+            <div class="card value-card">
+              <div class="card-header d-flex align-items-center justify-content-center">
+                <div class="element-rounded element-md text-white bg-primary">
+                  <i class="ri-empathize-line"></i>
+                </div>
+                <h5 class="mb-0 ms-3">Respect</h5>
+              </div>
+              <div class="card-body text-center px-lg-4 px-4 px-sm-5">
+                <p>We treat all individuals with respect and dignity, regardless of their background, beliefs, or circumstances. We believe that every person deserves to be treated with compassion and kindness.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 pb-3 pb-lg-0">
+            <div class="card value-card">
+              <div class="card-header d-flex align-items-center justify-content-center">
+                <div class="element-rounded element-md text-white bg-primary">
+                  <i class="ri-team-line"></i>
+                </div>
+                <h5 class="mb-0 ms-3">Teamwork</h5>
+              </div>
+              <div class="card-body text-center px-lg-4 px-4 px-sm-5">
+                <p>We treat all individuals with respect and dignity, regardless of their background, beliefs, or circumstances. We believe that every person deserves to be treated with compassion and kindness.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- values end -->
+    <!-- about us start -->
+    <section id="about">
+      <div class="container">
+        <div class="row align-items-center justify-content-center justify-content-lg-between">
+          <div class="col-lg-6 col-8">
+            <div class="about-img">
+              <img src="/images/about.png" alt="">
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <h2 class="common-title text-secondary fs-1 pb-2 mb-0">About Us</h2>
+            <p class="fs-1 text-uppercase text-primary">Medical Web</p>
+            <div class="pt-4 w-lg-80">
+              <p class="fs-3 text-gray mb-2">ProHealth is a team of experienced medical professionals</p>
+              <p class="text-secondary mb-0">Dedicated to providing top-quality healthcare services. We believe in a holistic approach to healthcare that focuses on treating the whole person, not just the illness or symptoms.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- about us end -->
+    <!-- departments start -->
+    <div id="department">
+      <div class="container p-3 p-lg-5">
+        <h2 class="common-title text-secondary text-center fs-1 py-5 mb-0">Our Departments</h2>
+        <div class="slider-container">
+          <div class="department-slider">
+            <div>
+              <a href="javascript:void(0)" class="department-card">
+                <img src="/images/dpts/emergency.png" alt="">
+                <p class="fs-5">emergency <br> Department</p>
+              </a>
+            </div>
+            <div>
+              <a href="javascript:void(0)" class="department-card">
+                <img src="/images/dpts/cardiology.png" alt="">
+                <p class="fs-5">Cardiology <br> Department</p>
+              </a>
+            </div>
+            <div>
+              <a href="javascript:void(0)" class="department-card">
+                <img src="/images/dpts/pediatric.png" alt="">
+                <p class="fs-5">pediatric <br> Department</p>
+              </a>
+            </div>
+            <div>
+              <a href="javascript:void(0)" class="department-card">
+                <img src="/images/dpts/psychology.png" alt="">
+                <p class="fs-5">psychiatric <br> Department</p>
+              </a>
+            </div>
+            <div>
+              <a href="javascript:void(0)" class="department-card">
+                <img src="/images/dpts/gynecology.png" alt="">
+                <p class="fs-5">gynecology <br> Department</p>
+              </a>
+            </div>
+            <div>
+              <a href="javascript:void(0)" class="department-card">
+                <img src="/images/dpts/medicine.png" alt="">
+                <p class="fs-5">medicine <br> Department</p>
+              </a>
+            </div>
+            <div>
+              <a href="javascript:void(0)" class="department-card">
+                <img src="/images/dpts/neurology.png" alt="">
+                <p class="fs-5">neurology <br> Department</p>
+              </a>
+            </div>
+          </div>
+          <div class="slider-btn-group">
+            <button class="slider-prev">
+              <i class="ri-arrow-left-line"></i>
+            </button>
+            <button class="slider-next">
+              <i class="ri-arrow-right-line"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- departments end -->
+    <!-- awards start -->
+    <div id="awards">
+      <div class="container">
+        <h2 class="common-title text-secondary fs-1">Awards</h2>
+        <div class="row justify-content-center">
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 mb-3 mb-xl-0">
+            <div class="award-card h-100">
+              <div class="award-title d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <div class="element-rounded element-xl rounded-3 bg-primary text-white">
+                    <img src="/images/badge.png" alt="">
+                  </div>
+                </div>
+                <h6 class="text-secondary mb-0">Malcolm Baldrige National Quality Award</h6>
+              </div>
+              <div class="mt-4 text-gray px-3">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, perferendis?</div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 mb-3 mb-xl-0">
+            <div class="award-card h-100">
+              <div class="award-title d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <div class="element-rounded element-xl rounded-3 bg-primary text-white">
+                    <img src="/images/badge.png" alt="">
+                  </div>
+                </div>
+                <h6 class="text-secondary mb-0">Malcolm Baldrige National Quality Award</h6>
+              </div>
+              <div class="mt-4 text-gray px-3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo rerum, dignissimos cum aspernatur doloremque sapiente placeat. Dolor nam odio perferendis.</div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8 mb-3 mb-xl-0">
+            <div class="award-card h-100">
+              <div class="award-title d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <div class="element-rounded element-xl rounded-3 bg-primary text-white">
+                    <img src="/images/badge.png" alt="">
+                  </div>
+                </div>
+                <h6 class="text-secondary mb-0">Malcolm Baldrige National Quality Award</h6>
+              </div>
+              <div class="mt-4 py-2 text-gray px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatum laborum at recusandae aspernatur quos rerum atque, iste,</div>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-4 col-md-6 col-sm-8">
+            <div class="award-card h-100">
+              <div class="award-title d-flex justify-content-between align-items-center">
+                <div class="pe-3">
+                  <div class="element-rounded element-xl rounded-3 bg-primary text-white">
+                    <img src="/images/badge.png" alt="">
+                  </div>
+                </div>
+                <h6 class="text-secondary mb-0">Malcolm Baldrige National Quality Award</h6>
+              </div>
+              <div class="mt-4 text-gray px-3">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Veniam magnam quae laboriosam repudiandae illo maxime!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- awards end -->
+    <!-- reviews start -->
+    <div id="reviews">
+      <div class="container">
+        <h2 class="common-title text-center text-secondary fs-1">Some Reviews <br><span class="fs-3 text-primary">OF OUR CLIENTS</span>
+        </h2>
+        <div class="row">
+          <div class="col-lg-6 pb-4">
+            <div class="d-flex d-lg-block justify-content-between">
+              <div class="review-card-container">
+                <div class="reviewer-card w-xl-60 mb-4 d-flex align-items-center" data-target="review1">
+                  <div class="reviewer-img">
+                    <img src="/images/reviewer/person-1.jpg" alt="">
+                  </div>
+                  <div class="reviewer-detail d-none d-lg-block ps-3">
+                    <h4 class="mb-0 text-secondary">Suzana Decruze</h4>
+                    <p class="mb-0 text-gray">California, USA</p>
+                  </div>
+                  <div class="reviewer-dot scale-up" id="review1"></div>
+                </div>
+              </div>
+              <div class="review-card-container">
+                <div class="ms-auto me-xl-5 reviewer-card w-xl-60 mb-4 d-flex align-items-center" data-target="review2">
+                  <div class="reviewer-img">
+                    <img src="/images/reviewer/person-2.jpg" alt="">
+                  </div>
+                  <div class="reviewer-detail d-none d-lg-block ps-3">
+                    <h4 class="mb-0 text-secondary">Mofizuddin Bhuian</h4>
+                    <p class="mb-0 text-gray">Noakhali, Bangladesh</p>
+                  </div>
+                  <div class="reviewer-dot" id="review2"></div>
+                </div>
+              </div>
+              <div class="review-card-container">
+                <div class="reviewer-card w-xl-60 d-flex align-items-center" data-target="review3">
+                  <div class="reviewer-img">
+                    <img src="/images/reviewer/person-3.jpg" alt="">
+                  </div>
+                  <div class="reviewer-detail d-none d-lg-block ps-3">
+                    <h4 class="mb-0 text-secondary">Asgor Ali Sarkar</h4>
+                    <p class="mb-0 text-gray">Karnatak, India</p>
+                  </div>
+                  <div class="reviewer-dot" id="review3"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <div class="review-body">
+              <div>
+                  <img class="quote-sign" src="/images/reviewer/quote.png" alt="">
+                  <p class="review-body-text px-xl-5 px-lg-3 px-5"></p>
+                  <p class="text-end mb-0 me-lg-4 review-body-rating text-warning"></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- reviews end -->
+    <!-- appointment start -->
+    <div id="appointment">
+      <div class="container">
+        <div class="appointment-body">
+          <img src="/images/syringe.png" alt="">
+          <div class="ms-2 ms-lg-5">          
+            <h2 class="fs-lg-1 fs-3 text-white">Don’t Let Your Health Take a Backseat!</h2>
+            <p class="fw-semibold text-secondary fs-6 fs-lg-4">Schedule an appointment with one of our experienced medical professionals today!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- appointment end -->
+    <!-- blogs start -->
+    <div id="blogs">
+      <div class="common-title text-center">
+        <span class="fs-3 text-primary">OUR BLOGS</span>
+        <h2 class="fs-1 text-secondary">Latest Update</h2>
+      </div>
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-4 col-md-6 col-sm-8 pb-3 pb-lg-0">
+            <div class="card">
+              <div class="card-body">
+                <div class="blog-img">
+                  <img src="/images/blogs/blog-1.jpg" alt="">
+                  <div class="overlay p-3">
+                    <p class="mb-0 text-white fw-medium">31st Dec, 2023</p>
+                    <div>
+                      <a href="javascript:void(0)" class="social-icon me-1">
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="social-icon me-1">
+                        <i class="ri-whatsapp-fill"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="social-icon">
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="blog-body">
+                  <a href="javascript:void(0)" class="fw-bold fs-5 text-secondary mb-3">The Benefits of Mindfulness Meditation for Stress and  Anxiety</a>
+                  
+                  <a href="javascript:void(0)" class="fw-semibold text-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-8 pb-3 pb-lg-0">
+            <div class="card">
+              <div class="card-body">
+                <div class="blog-img">
+                  <img src="/images/blogs/blog-2.jpg" alt="">
+                  <div class="overlay p-3">
+                    <p class="mb-0 text-white fw-medium">27th Dec, 2023</p>
+                    <div>
+                      <a href="javascript:void(0)" class="social-icon me-1">
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="social-icon me-1">
+                        <i class="ri-whatsapp-fill"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="social-icon">
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="blog-body">
+                  <a href="javascript:void(0)" class="fw-bold fs-5 text-secondary mb-3">Healthy Eating on a Budget: Tips and Strategies</a>
+                  
+                  <a href="javascript:void(0)" class="fw-semibold text-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-8 pb-3 pb-lg-0">
+            <div class="card">
+              <div class="card-body">
+                <div class="blog-img">
+                  <img src="/images/blogs/blog-3.jpg" alt="">
+                  <div class="overlay p-3">
+                    <p class="mb-0 text-white fw-medium">30th Dec, 2023</p>
+                    <div>
+                      <a href="javascript:void(0)" class="social-icon me-1">
+                        <i class="ri-facebook-fill"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="social-icon me-1">
+                        <i class="ri-whatsapp-fill"></i>
+                      </a>
+                      <a href="javascript:void(0)" class="social-icon">
+                        <i class="ri-twitter-fill"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="blog-body">
+                  <a href="javascript:void(0)" class="fw-bold fs-5 text-secondary mb-3">The Importance of Regular Cancer Screenings and Early Detection</a>
+                  
+                  <a href="javascript:void(0)" class="fw-semibold text-primary">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- blogs end -->
+    <!-- appointment booking start -->
+    <div id="booking">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-7 pe-lg-5">
+            <div class="common-title pt-0 pb-lg-5 pb-3">
+              <span class="fs-3 text-primary">BOOK AN</span>
+              <h2 class="fs-1 text-secondary">Appointment</h2>
+            </div>
+            <form action="" class="pb-5 pb-lg-0">
+              <div class="d-sm-flex mb-3">
+                <div class="w-sm-50 pe-sm-3 mb-3 mb-sm-0">
+                  <label class="form-label" for="name">Name</label>
+                  <input type="text" class="form-control" id="name" placeholder="Enter Your Name" required>
+                </div>
+                <div class="w-sm-50">
+                  <label class="form-label" for="email">Email</label>
+                  <input type="text" class="form-control" id="email" placeholder="Enter Your Email Address" required>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label" for="medicalRec">Medical Record Number (Optional)</label>
+                <input type="text" class="form-control" id="medicalRec" placeholder="1243-xxxx-xxxx" required>
+              </div>
+              <div class="d-sm-flex mb-3">
+                <div class="w-sm-50 pe-sm-3 mb-3 mb-sm-0">
+                  <label class="form-label" for="datepicker">Select Appointment Date</label>
+                  <input type="text" id="datepicker" class="form-control" placeholder="MM-dd-yyyy" autocomplete="off" required>
+                </div>
+                <div class="w-sm-50 position-relative">
+                  <label class="form-label" for="timepicker">Select Appointment Time</label>
+                  <input type="text" id="timepicker" class="form-control" placeholder="Select Yout Time" autocomplete="off" required>
+                  <div class="timelist">
+                    <ul>
+                      <li data-value="10:00 AM">10:00 AM</li>
+                      <li data-value="11:00 AM">11:00 AM</li>
+                      <li data-value="12:00 PM">12:00 PM</li>
+                      <li data-value="02:30 PM">02:30 PM</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Reasons for Visit</label>
+                <div class="form-radio mb-2">
+                  <input type="radio" id="routineCheck" name="reasons">
+                  <label for="routineCheck">Routine Checkup</label>
+                </div>
+                <div class="form-radio mb-2">
+                  <input type="radio" id="newVisit" name="reasons">
+                  <label for="newVisit">New Patient Visit</label>
+                </div>
+                <div class="form-radio mb-2">
+                  <input type="radio" id="concern" name="reasons">
+                  <label for="concern">Specific Concern</label>
+                </div>
+              </div>
+              <div>
+                <label class="form-label">Departments</label>
+                <div class="form-radio mb-2">
+                  <input type="radio" id="pediatric" name="depts">
+                  <label for="pediatric">Pediatric</label>
+                </div>
+                <div class="form-radio mb-2">
+                  <input type="radio" id="gyneco" name="depts">
+                  <label for="gyneco">Obstetrics & Gynecology</label>
+                </div>
+                <div class="form-radio mb-2">
+                  <input type="radio" id="cardio" name="depts">
+                  <label for="cardio">Cardiology</label>
+                </div>
+                <div class="form-radio mb-2">
+                  <input type="radio" id="neuron" name="depts">
+                  <label for="neuron">Neurology</label>
+                </div>
+              </div>
+              <div class="mt-5">
+                <button class="btn bg-primary-gradient text-white border-0 fs-5 px-5 py-2 rounded-pill">Submit</button>
+              </div>
+            </form>
+          </div>
+          <div class="col-lg-5 d-none d-lg-block">
+            <div class="contact-img">
+              <img src="/images/female-doctor-2.png" alt="">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- appointment booking end -->
+    <!-- were here start -->
+    <div class="bg-primary-light-gradient pt-5">
+      <div class="container text-center">
+        <div class="common-title">
+          <h2 class="fs-1 text-secondary">We are here for you 24/7</h2>
+        </div>
+        <img class="w-100" src="/images/247.png" alt="">
+      </div>
+    </div>
+    <!-- were here end -->
+    <!-- qna start -->
+    <div id="qna">
+      <div class="container">
+        <h2 class="common-title text-center text-primary fs-3">WHAT PEOPLE<br><span class="fs-1 text-secondary">Usually Asked</span>
+        </h2>
+        <div class="w-sm-75 mx-auto">
+          <div class="accordion" id="qnaData">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#qnaData1" aria-expanded="true" aria-controls="qnaData1">
+                  What services does ProHealth offer?
+                </button>
+              </h2>
+              <div id="qnaData1" class="accordion-collapse collapse show" data-bs-parent="#qnaData">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolorem beatae aut, fugiat amet suscipit esse maxime dignissimos maiores exercitationem, voluptatem totam porro. Quas, veritatis. Eveniet dignissimos quia nesciunt incidunt qui tempore mollitia corrupti, laborum maxime quis illo unde vero beatae est perspiciatis dicta molestias itaque tempora dolores nobis eius minus.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qnaData2" aria-expanded="false" aria-controls="qnaData2">
+                  How do I schedule an appointment with ProHealth?
+                </button>
+              </h2>
+              <div id="qnaData2" class="accordion-collapse collapse" data-bs-parent="#qnaData">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure vel consectetur explicabo numquam sint sapiente consequuntur. Ipsa eaque quo eveniet dolorem modi impedit odit nesciunt necessitatibus mollitia nam, dolorum, cum iure quas! Itaque provident dignissimos odit excepturi ad molestias corrupti, libero quidem porro inventore. Corporis impedit saepe aliquid reprehenderit architecto. Similique, quos eos! Amet quisquam quia, repellat animi reprehenderit quae.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qnaData3" aria-expanded="false" aria-controls="qnaData3">
+                  Do you accept insurance?
+                </button>
+              </h2>
+              <div id="qnaData3" class="accordion-collapse collapse" data-bs-parent="#qnaData">
+                <div class="accordion-body">
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam fuga impedit dolor sit dolorem porro vitae ipsam quibusdam animi excepturi reiciendis nulla id nemo, rem aliquam incidunt nobis veritatis aspernatur laboriosam cupiditate consequatur dolorum! Iusto non doloribus atque fugit mollitia libero rerum illum dolores quaerat nobis! Obcaecati ipsam, provident, officia rerum deleniti blanditiis a sint amet voluptatum velit beatae illo, excepturi odio nisi sunt similique fuga! Quia cum odio praesentium.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#qnaData4" aria-expanded="false" aria-controls="qnaData4">
+                  What should I bring to my appointment?
+                </button>
+              </h2>
+              <div id="qnaData4" class="accordion-collapse collapse" data-bs-parent="#qnaData">
+                <div class="accordion-body">
+                  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis ipsa rerum sed natus. Excepturi sint quos quisquam fugit veritatis ipsa pariatur quibusdam rerum, illo reiciendis, aspernatur nemo blanditiis quaerat accusamus possimus assumenda. Aperiam harum facilis, repellat doloribus illo consequatur repellendus deserunt eum ducimus, tenetur et totam amet eveniet, rem debitis nobis perspiciatis temporibus incidunt itaque.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- qna end -->
+    <!-- partners start -->
+    <div id="partners">
+      <div class="container py-5">
+        <div class="d-flex flex-wrap align-items-center justify-content-center">
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner01.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner02.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner03.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner04.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner05.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner06.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner07.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner08.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner09.png" alt="">
+          </div>
+          <div class="w-xl-20 w-lg-25 w-md-33 w-sm-50 w-50 h-100 d-flex justify-content-center align-items-center my-2">
+            <img class="w-75 h-100" src="/images/partners/partner10.png" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- partners end -->
+    <!-- footer start -->
+    <footer class="bg-primary-light">
+      <div class="footer-logo">
+        <img src="/images/footer-icon.png" alt="">
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-3 mb-lg-0 col-sm-6 order-lg-0">
+            <h4 class="text-secondary mb-4">Medical Web Service</h4>
+            <div class="d-flex">
+              <div class="element-rounded element-sm bg-primary text-white">
+                <i class="ri-map-pin-2-line"></i>
+              </div>
+              <a href="https://maps.app.goo.gl/NS4yWYZBB9RbS4Fg7" class="ms-3 text-secondary" target="_blank">123 PTI, Khan Para, Magura - 7600</a>
+            </div>
+            <div class="d-flex py-2">
+              <div class="element-rounded element-sm bg-primary text-white">
+                <i class="ri-phone-line"></i>
+              </div>
+              <a href="tel:01810078002" class="ms-3 text-secondary">+880 1810 078002</a>
+            </div>
+            <div class="d-flex">
+              <div class="element-rounded element-sm bg-primary text-white">
+                <i class="ri-mail-open-line"></i>
+              </div>
+              <a href="mailto:md.salmanezaz@email.com" class="ms-3 text-secondary">md.salmanezaz@email.com</a>
+            </div>
+          </div>
+          <div class="col-lg-2 mb-3 mb-lg-0 col-sm-6 order-lg-1 order-sm-2 text-center text-sm-start">
+            <a href="#" class="mb-2 d-block">About</a>
+            <a href="#" class="mb-2 d-block">Departments</a>
+            <a href="#" class="mb-2 d-block">Doctors</a>
+            <a href="#" class="mb-2 d-block">Timetable</a>
+            <a href="#" class="mb-2 d-block">Appointment</a>
+            <a href="#" class="mb-2 d-block">Testimonials</a>
+          </div>
+          <div class="col-lg-2 mb-3 mb-lg-0 col-sm-6 order-lg-2 order-sm-3 text-center text-sm-start">
+            <a href="#" class="mb-2 d-block">Blog</a>
+            <a href="#" class="mb-2 d-block">Contact Us</a>
+            <a href="#" class="mb-2 d-block">FAQs</a>
+            <a href="#" class="mb-2 d-block">Privacy Policy</a>
+            <a href="#" class="mb-2 d-block">Terms and Conditions</a>
+          </div>
+          <div class="col-lg-3 mb-3 mb-lg-0 col-sm-6 order-lg-3 order-sm-1">
+            <h4 class="text-secondary mb-4 text-center text-sm-start">Subscribe To Us Now!</h4>
+            <p class="text-secondary">Lorem ipsum dolor sit, amet consectetur adipisicing.</p>
+            <div class="input-group mb-3">
+              <input type="text" class="form-control border-secondary bg-transparent shadow-none" placeholder="email">
+              <a href="#" class="input-group-text border-secondary bg-primary-gradient text-white">Submit</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="copyright py-3 bg-primary text-white">
+      <div class="container d-flex justify-content-between">
+        <p class="mb-0 fw-light">Copyright &copy; 2023. All rights reserved to <a href="http://3z4z-portfolio.netlify.app" class="text-white fw-normal"> Md. Salman Ezaz</a>.</p>
+        <a href="http://3z4z-portfolio.netlify.app" class="text-white fw-light box">
+          <img src="/images/resume.png" class="me-2" height="16" alt="">
+          See My Portfolio
+        </a>
+      </div>
+    </div>
+    <!-- footer end -->
+    <!-- scripts -->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="/js/simple-list-grid.min.js"></script>
+    <script src="/node_modules/slick-carousel/slick/slick.min.js"></script>
+    <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+    <script src="/js/jquery.preloadinator.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

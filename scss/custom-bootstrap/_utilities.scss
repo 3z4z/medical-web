@@ -1,0 +1,78 @@
+@import '../colors';
+@import '../fonts';
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+
+// Create your own map
+$custom-colors: (
+  "gray": $gray,
+  "brown": $brown,
+  "primary-light": $primary-light,
+  "primary-light-2": $primary-light-2,
+);
+
+$custom-font-sizes: (
+  "sm" : $fs-sm,
+  "md" : $fs-md,
+  "lg" : $fs-lg,
+);
+
+// Merge the maps
+$theme-colors: map-merge($theme-colors, $custom-colors);
+$font-sizes: map-merge($font-sizes, $custom-font-sizes);
+
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/utilities";
+
+$utilities: map-merge(
+  $utilities, (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      ( responsive: true ),
+    ),
+    "viewport-height": map-merge(
+      map-get($utilities, "viewport-height"),
+      ( responsive: true ),
+    ),
+    "width": (
+      property: width,
+      class: w,
+      responsive: true,
+      values: (
+        auto: auto,
+        20: 20%,
+        25: 25%,
+        45: 45%,
+        33: (100% / 3),
+        50 : 50%,
+        60: 60%,
+        65: 65%,
+        75: 75%,
+        80: 80%,
+        90: 90%,
+        100: 100%,
+      ),
+    ),
+    "position": (
+        property: position,
+        responsive: true,
+        values: static relative absolute fixed sticky
+    ),
+    "min-height": (
+      property: min-height,
+      class: min-vh,
+      responsive: true,
+      values: (
+        auto: auto,
+        50 : 50vh,
+        75: 75vh,
+        85: 85vh,
+        100: 100vh,
+      ),
+    )
+  )
+);
+
+@import "../../node_modules/bootstrap/scss/utilities/api";
