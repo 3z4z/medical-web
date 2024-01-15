@@ -1,0 +1,49 @@
+@import '../colors';
+
+.form-radio {
+    display: inline-block;
+    margin-left: 1.25rem;
+    margin-right: 1rem;
+    label {
+        transition: all linear 0.15s;
+        color: rgba($primary, 0.5);
+        user-select: none;
+        cursor: pointer;
+    }
+    input {
+        width: 0;
+        height: 0;
+        position: relative;
+        &:after {
+            content: '';
+            position: absolute;
+            left: -20px;
+            top: -15px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid $primary;
+        }
+        &:before {
+            cursor: pointer;
+            content: '';
+            position: absolute;
+            left: -18px;
+            top: -13px;
+            width: 14px;
+            height: 14px;
+            background: $primary;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: all linear 0.15s;
+        }
+        &:checked {
+            ~ label {
+                color: $primary;
+            }
+            &:before {
+                transform: scale(1);
+            }
+        }
+    }
+}

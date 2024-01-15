@@ -16,6 +16,81 @@
   font-family: "oxygen";
   src: url(../fonts/Oxygen-Bold.ttf);
 }
+.bg-primary-gradient {
+  overflow: hidden;
+  background-image: linear-gradient(90deg, #307bc4, #274760);
+}
+
+.bg-primary-light-gradient {
+  background-image: linear-gradient(0deg, #bcd7f1, #eff7ff, transparent);
+}
+
+.preloader {
+  z-index: 999;
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-primary-gradient {
+  overflow: hidden;
+  background-image: linear-gradient(90deg, #307bc4, #274760);
+}
+
+.bg-primary-light-gradient {
+  background-image: linear-gradient(0deg, #bcd7f1, #eff7ff, transparent);
+}
+
+.social-icon {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+  text-align: center;
+  font-size: 1rem;
+  color: #fff;
+  line-height: 32px;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-radius: 50%;
+  transition: all linear 0.15s;
+}
+.social-icon:hover {
+  background-color: rgba(48, 123, 196, 0.25);
+}
+
+.booking-btn {
+  width: 210px;
+  position: relative;
+  background-image: linear-gradient(90deg, #307bc4, #274760);
+}
+.booking-btn > span {
+  position: absolute;
+  transition: all linear 0.15s;
+}
+.booking-btn > span:first-child {
+  left: 25%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.booking-btn > span:last-child {
+  opacity: 0;
+  right: 30%;
+  top: 52%;
+  transform: translateY(-50%);
+}
+.booking-btn:hover > span:first-child {
+  left: 22%;
+}
+.booking-btn:hover > span:last-child {
+  opacity: 1;
+  right: 21%;
+}
+
 .element-rounded {
   width: 72px;
   height: 72px;
@@ -41,6 +116,63 @@
   height: 28px;
   line-height: 28px;
   font-size: 1rem;
+}
+
+.bg-primary-gradient {
+  overflow: hidden;
+  background-image: linear-gradient(90deg, #307bc4, #274760);
+}
+
+.bg-primary-light-gradient {
+  background-image: linear-gradient(0deg, #bcd7f1, #eff7ff, transparent);
+}
+
+.form-radio {
+  display: inline-block;
+  margin-left: 1.25rem;
+  margin-right: 1rem;
+}
+.form-radio label {
+  transition: all linear 0.15s;
+  color: rgba(48, 123, 196, 0.5);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.form-radio input {
+  width: 0;
+  height: 0;
+  position: relative;
+}
+.form-radio input:after {
+  content: "";
+  position: absolute;
+  left: -20px;
+  top: -15px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1px solid #307bc4;
+}
+.form-radio input:before {
+  cursor: pointer;
+  content: "";
+  position: absolute;
+  left: -18px;
+  top: -13px;
+  width: 14px;
+  height: 14px;
+  background: #307bc4;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: all linear 0.15s;
+}
+.form-radio input:checked ~ label {
+  color: #307bc4;
+}
+.form-radio input:checked:before {
+  transform: scale(1);
 }
 
 .bg-primary-gradient {
@@ -5601,81 +5733,8 @@ h6,
   font-family: "oxygen";
 }
 
-.preloader {
-  z-index: 999;
-  background-color: #fff;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.social-icon {
-  width: 32px;
-  height: 32px;
-  display: inline-block;
-  text-align: center;
-  font-size: 1rem;
-  color: #fff;
-  line-height: 32px;
-  background-color: rgba(255, 255, 255, 0.25);
-  border-radius: 50%;
-  transition: all linear 0.15s;
-}
-.social-icon:hover {
-  background-color: rgba(48, 123, 196, 0.25);
-}
-
-.form-radio {
-  display: inline-block;
-  margin-left: 1.25rem;
-  margin-right: 1rem;
-}
-.form-radio label {
-  transition: all linear 0.15s;
-  color: rgba(48, 123, 196, 0.5);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  cursor: pointer;
-}
-.form-radio input {
-  width: 0;
-  height: 0;
-  position: relative;
-}
-.form-radio input:after {
-  content: "";
-  position: absolute;
-  left: -20px;
-  top: -15px;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  border: 1px solid #307bc4;
-}
-.form-radio input:before {
-  cursor: pointer;
-  content: "";
-  position: absolute;
-  left: -18px;
-  top: -13px;
-  width: 14px;
-  height: 14px;
-  background: #307bc4;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: all linear 0.15s;
-}
-.form-radio input:checked ~ label {
-  color: #307bc4;
-}
-.form-radio input:checked:before {
-  transform: scale(1);
+.common-title {
+  padding: 5rem 0;
 }
 
 nav.navbar {
@@ -5739,59 +5798,26 @@ nav.navbar .navbar-nav .nav-link {
   width: 100%;
 }
 
-.booking-btn {
-  width: 210px;
-  position: relative;
-  background-image: linear-gradient(90deg, #307bc4, #274760);
-}
-.booking-btn > span {
-  position: absolute;
-  transition: all linear 0.15s;
-}
-.booking-btn > span:first-child {
-  left: 25%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.booking-btn > span:last-child {
-  opacity: 0;
-  right: 30%;
-  top: 52%;
-  transform: translateY(-50%);
-}
-.booking-btn:hover > span:first-child {
-  left: 22%;
-}
-.booking-btn:hover > span:last-child {
-  opacity: 1;
-  right: 21%;
-}
-
-.common-title {
-  padding: 5rem 0;
-}
-
-.value-card {
+#values .value-card {
   border: none !important;
   box-shadow: 3px 9px 15px 3px rgba(25, 25, 25, 0.08);
 }
-.value-card .card-header {
+#values .value-card .card-header {
   border: none;
 }
-.value-card .card-header h5, .value-card .card-header .h5 {
+#values .value-card .card-header h5, #values .value-card .card-header .h5 {
   transition: all linear 0.15s;
   color: #274760;
 }
-.value-card .card-body p {
+#values .value-card .card-body p {
   color: rgba(39, 71, 96, 0.45);
   font-weight: 400;
   font-size: 1.05rem;
 }
-.value-card:hover h5, .value-card:hover .h5 {
+#values .value-card:hover h5, #values .value-card:hover .h5 {
   color: #307bc4;
 }
-
-.value-img {
+#values .value-img {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -5800,7 +5826,7 @@ nav.navbar .navbar-nav .nav-link {
   border-radius: 50%;
   box-shadow: 0 0 8px 3px rgba(25, 25, 25, 0.08);
 }
-.value-img img {
+#values .value-img img {
   height: 75%;
   aspect-ratio: 1/1;
 }
