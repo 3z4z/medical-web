@@ -1,6 +1,6 @@
 @font-face {
-    font-family: 'openSans';
-    src: url(../fonts/OpenSans.ttf);
+    font-family: 'NotoSans';
+    src: url(../fonts/NotoSans.ttf);
 }
 
 @font-face {
@@ -8,7 +8,7 @@
     src: url(../fonts/Oxygen-Bold.ttf);
 }
 
-$font-main: 'openSans';
+$font-main: 'NotoSans';
 $heading-font: 'oxygen';
 
 $fs-md: 0.875rem;

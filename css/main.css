@@ -9,8 +9,8 @@
 }
 
 @font-face {
-  font-family: "openSans";
-  src: url(../fonts/OpenSans.ttf);
+  font-family: "NotoSans";
+  src: url(../fonts/NotoSans.ttf);
 }
 @font-face {
   font-family: "oxygen";
@@ -175,6 +175,104 @@
   transform: scale(1);
 }
 
+#aboutBanner {
+  height: 90vh;
+  background-image: url(../../images/banner.jpeg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+#whyChooseUs {
+  padding-top: 5rem;
+}
+@media screen and (max-width: 1199px) {
+  #whyChooseUs {
+    padding-top: 1rem;
+  }
+}
+
+.choice-img {
+  border-radius: 2rem;
+  overflow: hidden;
+  width: 100%;
+}
+.choice-img img {
+  width: 100%;
+}
+@media screen and (max-width: 1199px) {
+  .choice-img {
+    height: 25rem;
+  }
+  .choice-img img {
+    height: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+.counter-body {
+  margin: 5rem 0;
+  padding: 5rem 0;
+  border-radius: 2rem;
+  background-image: url(../../images/about-page/counter-bg.jpeg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.counter-body h2 span, .counter-body .h2 span {
+  font-family: "oxygen";
+}
+
+#about-ending {
+  padding-bottom: 0 !important;
+}
+#about-ending .ending-container {
+  margin: 0 auto;
+  border-radius: 3rem 3rem 0 0;
+  overflow: hidden;
+  position: relative;
+}
+#about-ending .ending-container img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#about-ending .ending-container .overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 123, 196, 0.65);
+  top: 0;
+  left: 0;
+  align-items: center;
+  flex-direction: column;
+}
+#about-ending .ending-container .overlay h2, #about-ending .ending-container .overlay .h2 {
+  font-size: 3.5rem;
+  text-align: center;
+  text-transform: capitalize;
+  color: #fff;
+}
+@media screen and (max-width: 1199px) {
+  #about-ending .ending-container .overlay h2, #about-ending .ending-container .overlay .h2 {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  #about-ending .ending-container .overlay h2, #about-ending .ending-container .overlay .h2 {
+    font-size: 1.5rem;
+  }
+}
+#about-ending .ending-container .overlay p {
+  text-align: center;
+  color: #fff;
+}
+
+footer {
+  margin-top: 0 !important;
+}
+
 .bg-primary-gradient {
   overflow: hidden;
   background-image: linear-gradient(90deg, #307bc4, #274760);
@@ -185,8 +283,8 @@
 }
 
 @font-face {
-  font-family: "openSans";
-  src: url(../fonts/OpenSans.ttf);
+  font-family: "NotoSans";
+  src: url(../fonts/NotoSans.ttf);
 }
 @font-face {
   font-family: "oxygen";
@@ -5711,7 +5809,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: "openSans";
+  font-family: "NotoSans";
 }
 
 a {
@@ -5731,6 +5829,11 @@ h5,
 h6,
 .h6 {
   font-family: "oxygen";
+}
+
+h1, .h1 {
+  font-size: 3rem !important;
+  font-weight: 800;
 }
 
 .common-title {
@@ -5775,27 +5878,24 @@ nav.navbar .navbar-nav .nav-link {
   display: flex;
   align-items: center;
 }
-#banner .banner-title {
-  text-align: center;
-  color: #274760;
-}
-#banner .banner-title h1, #banner .banner-title .h1 {
-  margin-top: 5rem;
-  width: 100%;
-  font-size: 3rem;
-  font-weight: 800;
-}
-#banner .banner-title p {
-  margin: 0 auto;
-  width: 80%;
-  font-size: 1.25rem;
-}
 #banner .banner-doc {
   bottom: 0;
   right: 16px;
 }
 #banner img {
   width: 100%;
+}
+
+.banner-title {
+  color: #274760;
+}
+.banner-title h1, .banner-title .h1 {
+  width: 100%;
+  margin-top: 5rem;
+}
+.banner-title p {
+  width: 80%;
+  font-size: 1.25rem;
 }
 
 #values .value-card {
@@ -6178,7 +6278,7 @@ nav.navbar .navbar-nav .nav-link {
   border-radius: 0.75rem;
 }
 #qna .accordion-item .accordion-button {
-  font-family: "openSans";
+  font-family: "NotoSans";
   font-weight: 600;
   font-size: 1.25rem;
   color: rgba(39, 71, 96, 0.85);
@@ -6307,6 +6407,68 @@ footer a:hover {
   text-align: center;
 }
 
+.vbox-container {
+  overflow: hidden;
+}
+
+.vbox-title {
+  background-color: transparent;
+  font-size: 0.75rem;
+}
+
+.vbox-share {
+  border-radius: 0.75rem;
+  background-color: #223;
+  padding-bottom: 4px;
+  bottom: 2px;
+}
+.vbox-share a svg, .vbox-share .vbox-link-btn svg {
+  color: #ddd;
+}
+.vbox-share a svg:hover, .vbox-share .vbox-link-btn svg:hover {
+  color: #aaa;
+}
+
+.medic-gallery {
+  aspect-ratio: 1/1;
+  border-radius: 1rem;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.medic-gallery .overlay {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(48, 123, 196, 0.5);
+  border-radius: 1rem;
+  transition: all linear 0.15s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.medic-gallery .overlay i {
+  display: inline-block;
+  background-color: #fff;
+  color: #223;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+}
+.medic-gallery:hover .overlay {
+  opacity: 1;
+}
+.medic-gallery img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  vertical-align: middle;
+}
+
 @media screen and (min-width: 992px) {
   #banner {
     align-items: start;
@@ -6327,7 +6489,8 @@ footer a:hover {
   #department,
   #appointment,
   #blogs,
-  #qna {
+  #qna,
+  #about-ending {
     padding: 4rem 0;
   }
   #partners {

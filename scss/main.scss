@@ -4,6 +4,11 @@
 @import '../scss/custom-buttons';
 @import '../scss/custom-bootstrap/buttons';
 @import '../scss/custom-bootstrap/forms';
+
+// pages styles
+
+@import '../scss/pages/about';
+
 @import '../scss/custom-bootstrap/variables';
 @import '../scss/custom-bootstrap/utilities';
 
@@ -26,6 +31,11 @@ h4,
 h5,
 h6 {
     font-family: $heading-font;
+}
+
+h1 {
+    font-size: 3rem !important;
+    font-weight: 800;
 }
 
 .common-title {
@@ -80,24 +90,6 @@ nav.navbar {
     display: flex;
     align-items: center;
 
-    .banner-title {
-        text-align: center;
-        color: $secondary;
-
-        h1 {
-            margin-top: 5rem;
-            width: 100%;
-            font-size: 3rem;
-            font-weight: 800;
-        }
-
-        p {
-            margin: 0 auto;
-            width: 80%;
-            font-size: 1.25rem;
-        }
-    }
-
     .banner-doc {
         bottom: 0;
         right: 16px;
@@ -105,6 +97,20 @@ nav.navbar {
 
     img {
         width: 100%;
+    }
+}
+
+.banner-title {
+    color: $secondary;
+
+    h1 {
+        width: 100%;
+        margin-top: 5rem;
+    }
+
+    p {
+        width: 80%;
+        font-size: 1.25rem;
     }
 }
 
@@ -703,6 +709,76 @@ footer {
 .ui-datepicker td span, .ui-datepicker td a {
     text-align: center;
 }
+
+// venobox override
+
+.vbox-container {
+    overflow: hidden;
+}
+
+.vbox-title {
+    background-color: transparent;
+    font-size: 0.75rem;
+}
+
+.vbox-share {
+    border-radius: 0.75rem;
+    background-color: #223;
+    padding-bottom: 4px;
+    bottom: 2px;
+    a,.vbox-link-btn {
+        svg {
+            color: #ddd;
+            &:hover{
+                color: #aaa;
+            }
+        }
+    }
+}
+
+.medic-gallery {
+    aspect-ratio: 1 / 1;
+    border-radius: 1rem;
+    overflow: auto;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    .overlay {
+        position: absolute;
+        opacity: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba($primary, 0.5);
+        border-radius: 1rem;
+        transition: all linear 0.15s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+            display: inline-block;
+            background-color: #fff;
+            color: #223;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border-radius: 50%;
+        }
+    }
+    &:hover {
+        .overlay {
+            opacity: 1;
+        }
+    }
+    img {
+        object-fit: cover;
+        vertical-align: middle;
+    }
+}
+
+
+
 
 @import '../scss/responsive';
 @import '../node_modules/bootstrap/scss/bootstrap';
